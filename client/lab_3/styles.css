@@ -49,6 +49,12 @@
   border: 1px solid #5995DA;
 }
 
+.social,
+.subscribe {
+  align-self: flex-end;
+  margin-bottom: 20px;
+}
+
 .photo-grid-container {
     display: flex;
     justify-content: center;
@@ -60,11 +66,19 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: row-reverse;
+    flex-direction: row;
 }
   
 .photo-grid-item {
     border: 1px solid #fff;
     width: 300px;
     height: 300px;
+}
+
+.first-item {
+    order: 1;
+}
+  
+.last-item {
+    order: -1;
 }
