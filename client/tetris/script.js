@@ -1,6 +1,6 @@
 const { raw } = require("body-parser")
 
-document.addEventListener('DOMContentLoaded', () => {~
+document.addEventListener('DOMContentLoaded', () => {
 
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
@@ -67,6 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {~
     //make the tetromino move down every second
     timerId = setInterval(moveDown, 1000)
 
+    //assign functions to keyCodes. 'e' means event
+    function control(e) {
+        if(e.keyCode === 37) {
+            moveLeft()
+        }
+    }
+    document.addEventListener('keyup',control)
+
     //move down function
     function moveDown() {
         undraw()
@@ -97,9 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {~
         if(!current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
             currentPosition += 1
         }
-
         draw()
-    
     }
 
 
