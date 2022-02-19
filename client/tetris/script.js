@@ -48,15 +48,29 @@ document.addEventListener('DOMContentLoaded', () => {~
     let random = Math.floor(Math.random()*theTetrominoes.length)
     let current = theTetrominoes[random][0]
 
-    //draw the first roatino in the first tetromino
+    //draw the Tetromino
     function draw() {
         current.forEach(index => {
             squares[currentPosition + index].classList.add('tetromino')
         })
     }
 
-    draw()
+    //undraw the Tetromino
+    function undraw() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.remove('tetromino')
+        })
+    }
     
+    //make the tetromino move down every second
+    timerId = setInterval(moveDown, 1000)
+
+    //move down function
+    function moveDon() {
+        undraw()
+        currentPosition += width
+        draw()
+    }
 
 
 })
