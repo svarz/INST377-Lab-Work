@@ -1,3 +1,5 @@
+const { raw } = require("body-parser")
+
 document.addEventListener('DOMContentLoaded', () => {~
 
     const grid = document.querySelector('.grid')
@@ -66,11 +68,40 @@ document.addEventListener('DOMContentLoaded', () => {~
     timerId = setInterval(moveDown, 1000)
 
     //move down function
-    function moveDon() {
+    function moveDown() {
         undraw()
         currentPosition += width
         draw()
+        freeze()
     }
+
+    //freeze function
+    function freeze() {
+        if(current.some(index => squares[currentPosition + index + width].classList.contains('taken'))) {
+            current.forEach(index => squares[currentPosition + index].classList.add('taken'))
+            //start a new tetromino falling
+            random = Math.floor(Math.random() * theTetrominoes.length)
+            current = theTetrominoes[random][currentRotation]
+            currentPosition = 4
+            draw()
+        }
+    }
+
+    //move the tetrominio left, unless is at edge or there is a blockage
+    function moveLeft() {
+        undraw()
+        const isAtLeftEdge = currentsome(index => (currentPosition + index) % width === 0)
+        
+        if(!isAtLeftEdge) current position -=1 
+
+        if(!current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
+            currentPosition += 1
+        }
+
+        draw()
+    
+    }
+
 
 
 })
