@@ -2,12 +2,12 @@ const { raw } = require("body-parser")
 const e = require("express")
 const { noExtendLeft } = require("sequelize/types/lib/operators")
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () =>{~
 
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
-    const ScoreDisplay = document.querySelector('#score')
-    const StartBtn = document.querySelector('#start-button')
+    const scoreDisplay = document.querySelector('#score')
+    const startBtn = document.querySelector('#start-button')
     const width = 10
     let nextRandom = 0
 
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
         undraw()
         const isAtLeftEdge = currentsome(index => (currentPosition + index) % width === 0)
         
-        if(!isAtLeftEdge) current position -=1 
+        if(!isAtLeftEdge) currentPosition -=1 
 
         if(!current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
             currentPosition += 1
@@ -168,6 +168,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+    //add functionality to the button
+    startBtn.addEventListener('click',() => {
+
+    })
 
 
 })
