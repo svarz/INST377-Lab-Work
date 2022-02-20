@@ -40,7 +40,7 @@
     height: 300px;
     display: flex;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 
 .my_github,
@@ -74,7 +74,7 @@
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
-    flex-direction: row;
+    flex-direction: row-reverse;
 }
   
 .photo-grid-item {
