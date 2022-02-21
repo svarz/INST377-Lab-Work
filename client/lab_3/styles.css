@@ -15,7 +15,8 @@
     border: 1px solid #fff;  /* For debugging */
     width: 900px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .links {
