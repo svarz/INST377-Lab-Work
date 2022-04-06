@@ -10,6 +10,9 @@ async function mainEvent() { // the async keyword means we can make API requests
     // it contains all 1,000 records we need
   });
 }
-
+function dataHandler(tempArray) {
+  root = document.documentElement;
+  root.style.setProperty('display: none');
+}
 // this actually runs first! It's calling the function above
 document.addEventListener('DOMContentLoaded', async () => mainEvent()); // the async keyword means we can make API requests
